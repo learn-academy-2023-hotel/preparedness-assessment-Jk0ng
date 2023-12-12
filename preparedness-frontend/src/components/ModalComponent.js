@@ -1,29 +1,17 @@
-import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, } from 'reactstrap';
-const ModalComponent = (props) => {
-  const [modal, setModal] = useState(false)
-  const toggle = () => {
-    setModal(!modal)
-  }
+import { Modal, ModalHeader, ModalBody } from 'reactstrap';
+import React from "react"
+const ModalComponent = ({inputName, toggle, modal}) => {
   return (
     <div>
-      <Button onClick={toggle} color="primary">Click Me</Button>
       <Modal isOpen={modal} toggle={toggle} >
-        <ModalHeader toggle={toggle}>
-          Hi {props.inputName}
-        </ModalHeader>
-        <ModalBody>
-          Lorem Ipsum
-        </ModalBody>
-        <ModalFooter>
-          <Button onClick={toggle}>
-            Submit
-          </Button>
-          <Button onClick={toggle}>
-            Cancel
-          </Button>
-        </ModalFooter>
-      </Modal>
+        
+          <ModalHeader toggle={toggle}>
+            Hi {inputName}
+          </ModalHeader>
+          <ModalBody>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </ModalBody>
+        </Modal>
     </div>
   )
 }
